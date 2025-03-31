@@ -10,7 +10,7 @@ import { Menu as MenuIcon, Translate, Brush, Settings as SettingsIcon, Help, Mic
 import sakuraLogo from '/sakura-logo.svg'
 import AudioUploader from './components/AudioUploader'
 
-const BASE_PATH = '/minanihongo'
+const BASE_PATH = ''
 
 const App: React.FC = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)

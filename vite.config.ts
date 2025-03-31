@@ -13,7 +13,7 @@ export default defineConfig({
   optimizeDeps: {
     include: ['vosk-browser'],
   },
-  base: '/minanihongo/',
+  base: '/',
   build: {
     outDir: 'dist',
     sourcemap: true,
