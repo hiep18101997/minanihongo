@@ -1,8 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { Box, Button, Typography, Paper, CircularProgress, IconButton } from '@mui/material';
 import { Mic, Stop, Refresh } from '@mui/icons-material';
-import axios from 'axios';
-import { message } from 'antd';
 
 interface AudioExtractorProps {
   onClose: () => void;
@@ -12,7 +10,7 @@ const AudioExtractor: React.FC<AudioExtractorProps> = ({ onClose }) => {
   const [isRecording, setIsRecording] = useState(false);
   const [transcript, setTranscript] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState<string>('');
   const recognitionRef = useRef<SpeechRecognition | null>(null);
 
   const startRecording = () => {
@@ -61,58 +59,6 @@ const AudioExtractor: React.FC<AudioExtractorProps> = ({ onClose }) => {
   const clearTranscript = () => {
     setTranscript('');
     setError('');
-  };
-
-  const handleUpload = async (file: File) => {
-    try {
-      setIsProcessing(true);
-      setError(null);
-      setTranscript('');
-
-      // Validate file size (max 25MB)
-      if (file.size > 25 * 1024 * 1024) {
-        throw new Error('File quá lớn. Vui lòng chọn file nhỏ hơn 25MB');
-      }
-
-      // Create form data
-      const formData = new FormData();
-      formData.append('file', file);
-
-      // Upload to AssemblyAI
-      const uploadResponse = await axios.post('https://api.assemblyai.com/v2/upload', formData, {
-        headers: {
-          'authorization': '2f2b3a4f87574e2d9a23f5dd3975042e', // Thay bằng API key của bạn
-          'Content-Type': 'application/json',
-        },
-      });
-
-      // Lấy URL audio đã upload
-      const audioUrl = uploadResponse.data.upload_url;
-
-      // Gửi yêu cầu nhận dạng giọng nói
-      const response = await axios.post('https://api.assemblyai.com/v2/transcript', {
-        audio_url: audioUrl,
-      }, {
-        headers: {
-          'authorization': '2f2b3a4f87574e2d9a23f5dd3975042e', // Thay bằng API key của bạn
-        },
-      });
-
-      if (response.data.error) {
-        throw new Error(response.data.error);
-      }
-
-      setTranscript(response.data.transcript);
-      message.success('Đã chuyển đổi âm thanh thành văn bản!');
-
-    } catch (error) {
-      console.error('Error processing audio:', error);
-      const errorMessage = error instanceof Error ? error.message : 'Có lỗi xảy ra khi xử lý file âm thanh';
-      setError(errorMessage);
-      message.error(errorMessage);
-    } finally {
-      setIsProcessing(false);
-    }
   };
 
   return (

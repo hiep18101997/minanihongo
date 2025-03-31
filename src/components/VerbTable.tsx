@@ -3,7 +3,6 @@ import { Table, Input, Button, Typography, Space, Tag } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import { getN5Verbs, searchVerbs } from '../api/verbsApi';
 import type { Verb, VerbExample } from '../types/verb';
-import { useDebounce } from '../hooks/useDebounce';
 import { SoundOutlined, AudioOutlined } from '@ant-design/icons';
 import { generateExamples, speak } from '../utils/verbUtils';
 
@@ -91,11 +90,6 @@ const VerbTable: React.FC = () => {
     } finally {
       setLoading(false);
     }
-  };
-
-  const handleReset = () => {
-    setSearchText('');
-    loadVerbs();
   };
 
   const handleSpeak = (text: string, event: React.MouseEvent) => {

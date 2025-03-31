@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom'
 import VerbTable from './components/VerbTable'
 import KanjiTable from './components/KanjiTable'
-import AudioExtractor from './components/AudioExtractor'
 import Settings from './components/Settings'
 import Guide from './components/Guide'
 import SakuraBackground from './components/SakuraBackground'
@@ -12,10 +11,6 @@ import sakuraLogo from '/sakura-logo.svg'
 import AudioUploader from './components/AudioUploader'
 
 const BASE_PATH = '/minanihongo'
-
-interface AudioExtractorProps {
-  onClose: () => void
-}
 
 const App: React.FC = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false)

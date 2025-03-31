@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Paper, Grid } from '@mui/material';
+import { Box, Typography, Paper } from '@mui/material';
 import { Translate, Brush, Mic, Settings as SettingsIcon } from '@mui/icons-material';
 
 const GuideCard: React.FC<{
@@ -134,13 +134,13 @@ const Guide: React.FC = () => {
         Hướng dẫn sử dụng
       </Typography>
       
-      <Grid container spacing={3}>
+      <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3 }}>
         {guides.map((guide, index) => (
-          <Grid item xs={12} md={6} key={index}>
+          <Box key={index} sx={{ flex: { xs: '0 0 100%', md: '0 0 calc(50% - 12px)' } }}>
             <GuideCard {...guide} />
-          </Grid>
+          </Box>
         ))}
-      </Grid>
+      </Box>
     </Box>
   );
 };
