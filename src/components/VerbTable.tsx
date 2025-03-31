@@ -1,103 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Input, Button, Typography, Space } from 'antd';
+import { Table, Input, Button, Typography, Space, Tag } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import { getN5Verbs, searchVerbs } from '../api/verbsApi';
-import type { Verb } from '../data/n5verbs';
+import type { Verb, VerbExample } from '../types/verb';
 import { useDebounce } from '../hooks/useDebounce';
-import { SoundOutlined } from '@ant-design/icons';
+import { SoundOutlined, AudioOutlined } from '@ant-design/icons';
+import { generateExamples, speak } from '../utils/verbUtils';
 
 const { Title, Text } = Typography;
-
-interface VerbExample {
-  japanese: string;
-  reading: string;
-  meaning: string;
-}
-
-interface VerbDetail {
-  ruForm: {
-    explanation: string;
-    examples: VerbExample[];
-  };
-  teForm: {
-    explanation: string;
-    examples: VerbExample[];
-  };
-  taForm: {
-    explanation: string;
-    examples: VerbExample[];
-  };
-  taiForm: {
-    explanation: string;
-    examples: VerbExample[];
-  };
-}
-
-// Hàm tạo ví dụ cho động từ
-const generateExamples = (verb: Verb): VerbDetail => {
-  return {
-    ruForm: {
-      explanation: "Thể る là dạng từ điển của động từ, dùng để diễn tả hành động chung chung không có thời gian cụ thể.",
-      examples: [
-        {
-          japanese: `毎日${verb.dictionaryForm}。`,
-          reading: `まいにち${verb.reading}。`,
-          meaning: `Hàng ngày tôi ${verb.meaning.toLowerCase()}.`,
-        },
-        {
-          japanese: `明日${verb.ruForm}ます。`,
-          reading: `あした${verb.ruForm}ます。`,
-          meaning: `Ngày mai tôi sẽ ${verb.meaning.toLowerCase()}.`,
-        },
-      ],
-    },
-    teForm: {
-      explanation: "Thể て dùng để nối các hành động, diễn tả hành động đang diễn ra, hoặc dùng để yêu cầu ai đó làm gì.",
-      examples: [
-        {
-          japanese: `${verb.teForm}います。`,
-          reading: `${verb.teForm}います。`,
-          meaning: `Đang ${verb.meaning.toLowerCase()}.`,
-        },
-        {
-          japanese: `${verb.teForm}ください。`,
-          reading: `${verb.teForm}ください。`,
-          meaning: `Hãy ${verb.meaning.toLowerCase()}.`,
-        },
-      ],
-    },
-    taForm: {
-      explanation: "Thể た dùng để diễn tả hành động đã hoàn thành trong quá khứ.",
-      examples: [
-        {
-          japanese: `昨日${verb.taForm}。`,
-          reading: `きのう${verb.taForm}。`,
-          meaning: `Hôm qua đã ${verb.meaning.toLowerCase()}.`,
-        },
-        {
-          japanese: `もう${verb.taForm}？`,
-          reading: `もう${verb.taForm}？`,
-          meaning: `Đã ${verb.meaning.toLowerCase()} chưa?`,
-        },
-      ],
-    },
-    taiForm: {
-      explanation: "Thể たい dùng để diễn tả mong muốn làm gì đó.",
-      examples: [
-        {
-          japanese: `${verb.taiForm}です。`,
-          reading: `${verb.taiForm}です。`,
-          meaning: `Tôi muốn ${verb.meaning.toLowerCase()}.`,
-        },
-        {
-          japanese: `${verb.taiForm}と思います。`,
-          reading: `${verb.taiForm}とおもいます。`,
-          meaning: `Tôi nghĩ là tôi muốn ${verb.meaning.toLowerCase()}.`,
-        },
-      ],
-    },
-  };
-};
 
 // Component hiển thị ví dụ
 const ExampleList: React.FC<{ examples: VerbExample[] }> = ({ examples }) => (
@@ -116,19 +26,48 @@ const VerbTable: React.FC = () => {
   const [verbs, setVerbs] = useState<Verb[]>([]);
   const [loading, setLoading] = useState(false);
   const [searchText, setSearchText] = useState('');
-  const debouncedSearchText = useDebounce(searchText, 500);
+  const [isListening, setIsListening] = useState(false);
+  const [recognition, setRecognition] = useState<SpeechRecognition | null>(null);
 
   useEffect(() => {
     loadVerbs();
   }, []);
 
   useEffect(() => {
-    if (debouncedSearchText) {
+    if (searchText) {
       handleSearch();
     } else {
       loadVerbs();
     }
-  }, [debouncedSearchText]);
+  }, [searchText]);
+
+  useEffect(() => {
+    // Initialize speech recognition
+    if ('webkitSpeechRecognition' in window) {
+      const SpeechRecognition = window.webkitSpeechRecognition;
+      const recognitionInstance = new SpeechRecognition();
+      recognitionInstance.continuous = false;
+      recognitionInstance.interimResults = false;
+      recognitionInstance.lang = 'ja-JP';
+
+      recognitionInstance.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        setSearchText(transcript);
+        handleSearch();
+      };
+
+      recognitionInstance.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+        setIsListening(false);
+      };
+
+      recognitionInstance.onend = () => {
+        setIsListening(false);
+      };
+
+      setRecognition(recognitionInstance);
+    }
+  }, []);
 
   const loadVerbs = async () => {
     setLoading(true);
@@ -145,7 +84,7 @@ const VerbTable: React.FC = () => {
   const handleSearch = async () => {
     setLoading(true);
     try {
-      const results = await searchVerbs(debouncedSearchText);
+      const results = await searchVerbs(searchText);
       setVerbs(results);
     } catch (error) {
       console.error('Error searching verbs:', error);
@@ -159,26 +98,23 @@ const VerbTable: React.FC = () => {
     loadVerbs();
   };
 
-  const speak = (text: string) => {
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'ja-JP';
-    
-    // Lấy cài đặt từ localStorage
-    const selectedVoice = localStorage.getItem('selectedVoice');
-    const rate = localStorage.getItem('speechRate');
-    const pitch = localStorage.getItem('speechPitch');
-    
-    // Áp dụng cài đặt
-    if (selectedVoice) {
-      const voices = window.speechSynthesis.getVoices();
-      const voice = voices.find(v => v.voiceURI === selectedVoice);
-      if (voice) utterance.voice = voice;
+  const handleSpeak = (text: string, event: React.MouseEvent) => {
+    event.stopPropagation();
+    speak(text);
+  };
+
+  const toggleListening = () => {
+    if (!recognition) {
+      console.error('Speech recognition not supported');
+      return;
     }
-    
-    if (rate) utterance.rate = parseFloat(rate);
-    if (pitch) utterance.pitch = parseFloat(pitch);
-    
-    window.speechSynthesis.speak(utterance);
+
+    if (isListening) {
+      recognition.stop();
+    } else {
+      recognition.start();
+      setIsListening(true);
+    }
   };
 
   const columns: ColumnsType<Verb> = [
@@ -190,13 +126,10 @@ const VerbTable: React.FC = () => {
       render: (text: string) => (
         <Space>
           <span>{text}ます</span>
-          <Button 
-            type="text" 
-            icon={<SoundOutlined />} 
-            onClick={(e) => {
-              e.stopPropagation();
-              speak(text + 'ます');
-            }}
+          <Button
+            type="text"
+            icon={<SoundOutlined />}
+            onClick={(e) => handleSpeak(text + 'ます', e)}
             className="text-blue-500 hover:text-blue-700"
           />
         </Space>
@@ -207,20 +140,8 @@ const VerbTable: React.FC = () => {
       dataIndex: 'reading',
       key: 'reading',
       className: 'font-japanese',
-      render: (text: string, record: Verb) => (
-        <Space>
-          <span>{record.reading}ます</span>
-          <Button 
-            type="text" 
-            icon={<SoundOutlined />} 
-            onClick={(e) => {
-              e.stopPropagation();
-              speak(record.reading + 'ます');
-            }}
-            className="text-blue-500 hover:text-blue-700"
-          />
-        </Space>
-      ),
+      render: (text: string) => text + 'ます',
+      responsive: ['md'],
     },
     {
       title: 'Nghĩa',
@@ -228,47 +149,36 @@ const VerbTable: React.FC = () => {
       key: 'meaning',
     },
     {
-      title: 'Nhóm',
-      key: 'group',
-      render: (_, record) => (
-        <div className="flex items-center">
-          <span className={`px-2 py-1 rounded-full text-sm ${
-            record.group === 'ichidan' 
-              ? 'bg-green-100 text-green-800' 
-              : record.group === 'godan'
-              ? 'bg-blue-100 text-blue-800'
-              : 'bg-purple-100 text-purple-800'
-          }`}>
-            {record.group === 'ichidan' 
-              ? 'Nhóm 2' 
-              : record.group === 'godan'
-              ? 'Nhóm 1'
-              : 'Bất quy tắc'}
-          </span>
-        </div>
-      ),
-      filters: [
-        { text: 'Nhóm 1 (Godan)', value: 'godan' },
-        { text: 'Nhóm 2 (Ichidan)', value: 'ichidan' },
-        { text: 'Bất quy tắc', value: 'irregular' },
-      ],
-      onFilter: (value, record) => record.group === value,
+      title: 'Loại',
+      dataIndex: 'type',
+      key: 'type',
+      width: 100,
+      responsive: ['lg'],
+      render: (text: string) => {
+        switch (text) {
+          case 'ichidan':
+            return <Tag color="blue">Nhóm 2</Tag>;
+          case 'godan':
+            return <Tag color="green">Nhóm 1</Tag>;
+          case 'irregular':
+            return <Tag color="red">Nhóm 3</Tag>;
+          default:
+            return <Tag>{text}</Tag>;
+        }
+      },
     },
     {
       title: 'Thể る',
       dataIndex: 'dictionaryForm',
       key: 'dictionaryForm',
       className: 'font-japanese',
-      render: (text: string, record: Verb) => (
+      render: (text: string) => (
         <Space>
-          <span>{record.dictionaryForm}</span>
-          <Button 
-            type="text" 
-            icon={<SoundOutlined />} 
-            onClick={(e) => {
-              e.stopPropagation();
-              speak(record.dictionaryForm);
-            }}
+          <span>{text}</span>
+          <Button
+            type="text"
+            icon={<SoundOutlined />}
+            onClick={(e) => handleSpeak(text, e)}
             className="text-blue-500 hover:text-blue-700"
           />
         </Space>
@@ -279,16 +189,13 @@ const VerbTable: React.FC = () => {
       dataIndex: 'teForm',
       key: 'teForm',
       className: 'font-japanese',
-      render: (text: string, record: Verb) => (
+      render: (text: string) => (
         <Space>
-          <span>{record.teForm}</span>
-          <Button 
-            type="text" 
-            icon={<SoundOutlined />} 
-            onClick={(e) => {
-              e.stopPropagation();
-              speak(record.teForm);
-            }}
+          <span>{text}</span>
+          <Button
+            type="text"
+            icon={<SoundOutlined />}
+            onClick={(e) => handleSpeak(text, e)}
             className="text-blue-500 hover:text-blue-700"
           />
         </Space>
@@ -299,16 +206,13 @@ const VerbTable: React.FC = () => {
       dataIndex: 'taForm',
       key: 'taForm',
       className: 'font-japanese',
-      render: (text: string, record: Verb) => (
+      render: (text: string) => (
         <Space>
-          <span>{record.taForm}</span>
-          <Button 
-            type="text" 
-            icon={<SoundOutlined />} 
-            onClick={(e) => {
-              e.stopPropagation();
-              speak(record.taForm);
-            }}
+          <span>{text}</span>
+          <Button
+            type="text"
+            icon={<SoundOutlined />}
+            onClick={(e) => handleSpeak(text, e)}
             className="text-blue-500 hover:text-blue-700"
           />
         </Space>
@@ -319,16 +223,13 @@ const VerbTable: React.FC = () => {
       dataIndex: 'taiForm',
       key: 'taiForm',
       className: 'font-japanese',
-      render: (text: string, record: Verb) => (
+      render: (text: string) => (
         <Space>
-          <span>{record.taiForm}</span>
-          <Button 
-            type="text" 
-            icon={<SoundOutlined />} 
-            onClick={(e) => {
-              e.stopPropagation();
-              speak(record.taiForm);
-            }}
+          <span>{text}</span>
+          <Button
+            type="text"
+            icon={<SoundOutlined />}
+            onClick={(e) => handleSpeak(text, e)}
             className="text-blue-500 hover:text-blue-700"
           />
         </Space>
@@ -344,9 +245,9 @@ const VerbTable: React.FC = () => {
         <div>
           <Title level={5} className="text-blue-600">Thông tin động từ</Title>
           <Text>
-            Nhóm động từ: <Text strong>{record.group === 'ichidan' ? 'Nhóm 2 (いちだん)' : 
-              record.group === 'godan' ? 'Nhóm 1 (ごだん)' : 
-              'Bất quy tắc (ふきそく)'}</Text>
+            Nhóm động từ: <Text strong>{record.type === 'ichidan' ? 'Nhóm 2 (いちだん)' : 
+              record.type === 'godan' ? 'Nhóm 1 (ごだん)' : 
+              'Nhóm 3 (ふきそく)'}</Text>
           </Text>
         </div>
 
@@ -382,19 +283,28 @@ const VerbTable: React.FC = () => {
   };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-sm">
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-2xl font-semibold text-gray-800">Bảng chia động từ tiếng Nhật</h1>
-        <div className="flex items-center gap-4">
-          <Input
-            placeholder="Tìm kiếm..."
-            value={searchText}
-            onChange={(e) => setSearchText(e.target.value)}
-            className="w-64"
-          />
-          <Button onClick={handleReset}>
-            Đặt lại
-          </Button>
+    <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <h1 className="text-3xl font-bold text-gray-900">Bảng chia động từ tiếng Nhật</h1>
+        <div className="flex items-center space-x-4">
+          <div className="relative">
+            <Input
+              placeholder="Tìm kiếm động từ..."
+              value={searchText}
+              onChange={(e) => {
+                setSearchText(e.target.value);
+                handleSearch();
+              }}
+              className="w-64"
+            />
+            <Button
+              type="text"
+              icon={<AudioOutlined />}
+              onClick={toggleListening}
+              className={`absolute right-2 top-1/2 -translate-y-1/2 ${isListening ? 'text-red-500' : ''}`}
+              title="Nhấn để nói"
+            />
+          </div>
         </div>
       </div>
       

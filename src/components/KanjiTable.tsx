@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Input, Button, Typography, Tag, Tooltip, Radio } from 'antd';
+import { Table, Input, Typography, Tag, Radio } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import { useDebounce } from '../hooks/useDebounce';
 import { getAllKanjis, searchKanjis } from '../api/kanjiApi';
 import type { Kanji } from '../data/n5kanjis';
 
-const { Title, Text } = Typography;
+const { Title } = Typography;
 
 const KanjiTable: React.FC = () => {
   const [kanjis, setKanjis] = useState<Kanji[]>([]);

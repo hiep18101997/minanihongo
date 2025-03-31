@@ -1,6 +1,6 @@
 export interface Verb {
   id: string;
-  group: 'ichidan' | 'godan' | 'irregular';  // Nhóm động từ
+  type: 'ichidan' | 'godan' | 'irregular';  // Nhóm động từ
   dictionaryForm: string;  // Thể từ điển
   reading: string;         // Cách đọc
   meaning: string;         // Nghĩa tiếng Việt
@@ -13,7 +13,7 @@ export interface Verb {
 export const N5_VERBS: Verb[] = [
   {
     id: '1',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '会う',
     reading: 'あう',
     meaning: 'Gặp',
@@ -24,7 +24,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '2',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '開く',
     reading: 'あく',
     meaning: 'Mở (tự động)',
@@ -35,7 +35,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '3',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '開ける',
     reading: 'あける',
     meaning: 'Mở (chủ động)',
@@ -46,7 +46,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '4',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '上がる',
     reading: 'あがる',
     meaning: 'Lên, tăng lên',
@@ -57,7 +57,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '5',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '遊ぶ',
     reading: 'あそぶ',
     meaning: 'Chơi',
@@ -68,7 +68,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '6',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '浴びる',
     reading: 'あびる',
     meaning: 'Tắm',
@@ -79,7 +79,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '7',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '歩く',
     reading: 'あるく',
     meaning: 'Đi bộ',
@@ -90,7 +90,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '8',
-    group: 'irregular',
+    type: 'irregular',
     dictionaryForm: 'いる',
     reading: 'いる',
     meaning: 'Có, ở (người, động vật)',
@@ -101,7 +101,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '9',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '入る',
     reading: 'はいる',
     meaning: 'Vào',
@@ -112,7 +112,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '10',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '入れる',
     reading: 'いれる',
     meaning: 'Cho vào',
@@ -123,7 +123,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '11',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '売る',
     reading: 'うる',
     meaning: 'Bán',
@@ -134,7 +134,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '12',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '起きる',
     reading: 'おきる',
     meaning: 'Thức dậy',
@@ -145,7 +145,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '13',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '送る',
     reading: 'おくる',
     meaning: 'Gửi',
@@ -156,7 +156,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '14',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '降りる',
     reading: 'おりる',
     meaning: 'Xuống (xe)',
@@ -167,7 +167,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '15',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '終わる',
     reading: 'おわる',
     meaning: 'Kết thúc',
@@ -178,7 +178,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '16',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '買う',
     reading: 'かう',
     meaning: 'Mua',
@@ -189,7 +189,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '17',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '返す',
     reading: 'かえす',
     meaning: 'Trả lại',
@@ -200,7 +200,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '18',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '帰る',
     reading: 'かえる',
     meaning: 'Về nhà',
@@ -211,7 +211,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '19',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '書く',
     reading: 'かく',
     meaning: 'Viết',
@@ -222,7 +222,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '20',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '貸す',
     reading: 'かす',
     meaning: 'Cho mượn',
@@ -233,7 +233,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '21',
-    group: 'irregular',
+    type: 'irregular',
     dictionaryForm: '来る',
     reading: 'くる',
     meaning: 'Đến',
@@ -244,7 +244,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '22',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '消す',
     reading: 'けす',
     meaning: 'Tắt',
@@ -255,7 +255,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '23',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '座る',
     reading: 'すわる',
     meaning: 'Ngồi',
@@ -266,7 +266,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '24',
-    group: 'irregular',
+    type: 'irregular',
     dictionaryForm: 'する',
     reading: 'する',
     meaning: 'Làm',
@@ -277,7 +277,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '25',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '立つ',
     reading: 'たつ',
     meaning: 'Đứng',
@@ -288,7 +288,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '26',
-    group: 'ichidan',
+    type: 'ichidan',
     dictionaryForm: '食べる',
     reading: 'たべる',
     meaning: 'Ăn',
@@ -299,7 +299,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '27',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '使う',
     reading: 'つかう',
     meaning: 'Sử dụng',
@@ -310,7 +310,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '28',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '手伝う',
     reading: 'てつだう',
     meaning: 'Giúp đỡ',
@@ -321,7 +321,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '29',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '出る',
     reading: 'でる',
     meaning: 'Ra ngoài',
@@ -332,7 +332,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '30',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '取る',
     reading: 'とる',
     meaning: 'Lấy',
@@ -343,7 +343,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '31',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '飲む',
     reading: 'のむ',
     meaning: 'Uống',
@@ -354,7 +354,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '32',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '乗る',
     reading: 'のる',
     meaning: 'Lên (xe)',
@@ -365,7 +365,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '33',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '始まる',
     reading: 'はじまる',
     meaning: 'Bắt đầu (tự động)',
@@ -376,7 +376,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '34',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '話す',
     reading: 'はなす',
     meaning: 'Nói chuyện',
@@ -387,7 +387,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '35',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '払う',
     reading: 'はらう',
     meaning: 'Trả tiền',
@@ -398,7 +398,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '36',
-    group: 'ichidan',
+    type: 'ichidan',
     dictionaryForm: '見る',
     reading: 'みる',
     meaning: 'Xem, nhìn',
@@ -409,7 +409,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '37',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '待つ',
     reading: 'まつ',
     meaning: 'Chờ đợi',
@@ -420,7 +420,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '38',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '休む',
     reading: 'やすむ',
     meaning: 'Nghỉ ngơi',
@@ -431,7 +431,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '39',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '分かる',
     reading: 'わかる',
     meaning: 'Hiểu',
@@ -442,7 +442,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '40',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '忘れる',
     reading: 'わすれる',
     meaning: 'Quên',
@@ -453,7 +453,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '41',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '泳ぐ',
     reading: 'およぐ',
     meaning: 'Bơi',
@@ -464,7 +464,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '42',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '押す',
     reading: 'おす',
     meaning: 'Đẩy',
@@ -475,7 +475,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '43',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '脱ぐ',
     reading: 'ぬぐ',
     meaning: 'Cởi (đồ/giày dép)',
@@ -486,7 +486,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '44',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '咲く',
     reading: 'さく',
     meaning: 'Nở (hoa)',
@@ -497,7 +497,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '45',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '差す',
     reading: 'さす',
     meaning: 'Mở (ô/dù)',
@@ -508,7 +508,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '46',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '死ぬ',
     reading: 'しぬ',
     meaning: 'Chết',
@@ -519,7 +519,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '47',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '吸う',
     reading: 'すう',
     meaning: 'Hút, hít',
@@ -530,7 +530,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '48',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '住む',
     reading: 'すむ',
     meaning: 'Sống, cư trú',
@@ -541,7 +541,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '49',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '急ぐ',
     reading: 'いそぐ',
     meaning: 'Vội vàng',
@@ -552,7 +552,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '50',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '遊ぶ',
     reading: 'あそぶ',
     meaning: 'Chơi',
@@ -563,7 +563,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '51',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '洗う',
     reading: 'あらう',
     meaning: 'Rửa, giặt',
@@ -574,7 +574,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '52',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '言う',
     reading: 'いう',
     meaning: 'Nói',
@@ -585,7 +585,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '53',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '歌う',
     reading: 'うたう',
     meaning: 'Hát',
@@ -596,7 +596,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '54',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '思う',
     reading: 'おもう',
     meaning: 'Nghĩ',
@@ -607,7 +607,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '55',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '聞く',
     reading: 'きく',
     meaning: 'Nghe, hỏi',
@@ -618,7 +618,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '56',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '働く',
     reading: 'はたらく',
     meaning: 'Làm việc',
@@ -629,7 +629,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '57',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '吹く',
     reading: 'ふく',
     meaning: 'Thổi',
@@ -640,7 +640,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '58',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '磨く',
     reading: 'みがく',
     meaning: 'Đánh bóng, chải',
@@ -651,7 +651,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '59',
-    group: 'ichidan',
+    type: 'ichidan',
     dictionaryForm: '寝る',
     reading: 'ねる',
     meaning: 'Ngủ',
@@ -662,7 +662,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '60',
-    group: 'ichidan',
+    type: 'ichidan',
     dictionaryForm: '着る',
     reading: 'きる',
     meaning: 'Mặc (áo)',
@@ -673,7 +673,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '61',
-    group: 'ichidan',
+    type: 'ichidan',
     dictionaryForm: '出る',
     reading: 'でる',
     meaning: 'Ra ngoài',
@@ -684,7 +684,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '62',
-    group: 'ichidan',
+    type: 'ichidan',
     dictionaryForm: '教える',
     reading: 'おしえる',
     meaning: 'Dạy',
@@ -695,7 +695,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '63',
-    group: 'ichidan',
+    type: 'ichidan',
     dictionaryForm: '借りる',
     reading: 'かりる',
     meaning: 'Mượn',
@@ -706,7 +706,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '64',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '走る',
     reading: 'はしる',
     meaning: 'Chạy',
@@ -717,7 +717,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '65',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '曲がる',
     reading: 'まがる',
     meaning: 'Rẽ, quẹo',
@@ -728,7 +728,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '66',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '渡る',
     reading: 'わたる',
     meaning: 'Băng qua',
@@ -739,7 +739,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '67',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '読む',
     reading: 'よむ',
     meaning: 'Đọc',
@@ -750,7 +750,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '68',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '止まる',
     reading: 'とまる',
     meaning: 'Dừng lại',
@@ -761,7 +761,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '69',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '降る',
     reading: 'ふる',
     meaning: 'Rơi (mưa/tuyết)',
@@ -772,7 +772,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '70',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '掛かる',
     reading: 'かかる',
     meaning: 'Mất (thời gian/tiền)',
@@ -783,7 +783,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '71',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '要る',
     reading: 'いる',
     meaning: 'Cần',
@@ -794,7 +794,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '72',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '切る',
     reading: 'きる',
     meaning: 'Cắt',
@@ -805,7 +805,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '73',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '作る',
     reading: 'つくる',
     meaning: 'Làm, tạo ra',
@@ -816,7 +816,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '74',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '撮る',
     reading: 'とる',
     meaning: 'Chụp (ảnh)',
@@ -827,7 +827,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '75',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '持つ',
     reading: 'もつ',
     meaning: 'Cầm, giữ',
@@ -838,7 +838,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '76',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '送る',
     reading: 'おくる',
     meaning: 'Gửi',
@@ -849,7 +849,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '77',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '知る',
     reading: 'しる',
     meaning: 'Biết',
@@ -860,7 +860,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '78',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '取れる',
     reading: 'とれる',
     meaning: 'Rơi ra, được lấy',
@@ -871,7 +871,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '79',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '直る',
     reading: 'なおる',
     meaning: 'Được sửa',
@@ -882,7 +882,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '80',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '残る',
     reading: 'のこる',
     meaning: 'Còn lại',
@@ -893,7 +893,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '81',
-    group: 'ichidan',
+    type: 'ichidan',
     dictionaryForm: '見える',
     reading: 'みえる',
     meaning: 'Nhìn thấy được',
@@ -904,7 +904,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '82',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '聞こえる',
     reading: 'きこえる',
     meaning: 'Nghe được',
@@ -915,7 +915,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '83',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '始める',
     reading: 'はじめる',
     meaning: 'Bắt đầu (chủ động)',
@@ -926,7 +926,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '84',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '閉まる',
     reading: 'しまる',
     meaning: 'Đóng (tự động)',
@@ -937,7 +937,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '85',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '閉める',
     reading: 'しめる',
     meaning: 'Đóng (chủ động)',
@@ -948,7 +948,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '86',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '付ける',
     reading: 'つける',
     meaning: 'Bật, mở (đèn)',
@@ -959,7 +959,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '87',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '疲れる',
     reading: 'つかれる',
     meaning: 'Mệt',
@@ -970,7 +970,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '88',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '出かける',
     reading: 'でかける',
     meaning: 'Đi ra ngoài',
@@ -981,7 +981,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '89',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '電話する',
     reading: 'でんわする',
     meaning: 'Gọi điện thoại',
@@ -992,7 +992,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '90',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '勉強する',
     reading: 'べんきょうする',
     meaning: 'Học',
@@ -1003,7 +1003,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '91',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '練習する',
     reading: 'れんしゅうする',
     meaning: 'Luyện tập',
@@ -1014,7 +1014,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '92',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '結婚する',
     reading: 'けっこんする',
     meaning: 'Kết hôn',
@@ -1025,7 +1025,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '93',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '散歩する',
     reading: 'さんぽする',
     meaning: 'Đi dạo',
@@ -1036,7 +1036,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '94',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '掃除する',
     reading: 'そうじする',
     meaning: 'Dọn dẹp',
@@ -1047,7 +1047,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '95',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '洗濯する',
     reading: 'せんたくする',
     meaning: 'Giặt giũ',
@@ -1058,7 +1058,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '96',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '予約する',
     reading: 'よやくする',
     meaning: 'Đặt chỗ',
@@ -1069,7 +1069,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '97',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '運転する',
     reading: 'うんてんする',
     meaning: 'Lái xe',
@@ -1080,7 +1080,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '98',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '買い物する',
     reading: 'かいものする',
     meaning: 'Mua sắm',
@@ -1091,7 +1091,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '99',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '食事する',
     reading: 'しょくじする',
     meaning: 'Ăn cơm',
@@ -1102,7 +1102,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '100',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '旅行する',
     reading: 'りょこうする',
     meaning: 'Du lịch',
@@ -1113,7 +1113,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '101',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '説明する',
     reading: 'せつめいする',
     meaning: 'Giải thích',
@@ -1124,7 +1124,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '102',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '心配する',
     reading: 'しんぱいする',
     meaning: 'Lo lắng',
@@ -1135,7 +1135,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '103',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '約束する',
     reading: 'やくそくする',
     meaning: 'Hứa, hẹn',
@@ -1146,7 +1146,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '104',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '質問する',
     reading: 'しつもんする',
     meaning: 'Hỏi',
@@ -1157,7 +1157,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '105',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '研究する',
     reading: 'けんきゅうする',
     meaning: 'Nghiên cứu',
@@ -1168,7 +1168,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '106',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '見学する',
     reading: 'けんがくする',
     meaning: 'Tham quan',
@@ -1179,7 +1179,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '107',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '卒業する',
     reading: 'そつぎょうする',
     meaning: 'Tốt nghiệp',
@@ -1190,7 +1190,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '108',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '入学する',
     reading: 'にゅうがくする',
     meaning: 'Nhập học',
@@ -1201,7 +1201,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '109',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '留学する',
     reading: 'りゅうがくする',
     meaning: 'Du học',
@@ -1212,7 +1212,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '110',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '出席する',
     reading: 'しゅっせきする',
     meaning: 'Có mặt',
@@ -1223,7 +1223,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '111',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '欠席する',
     reading: 'けっせきする',
     meaning: 'Vắng mặt',
@@ -1234,7 +1234,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '112',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '遅刻する',
     reading: 'ちこくする',
     meaning: 'Đi muộn',
@@ -1245,7 +1245,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '113',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '残業する',
     reading: 'ざんぎょうする',
     meaning: 'Làm thêm giờ',
@@ -1256,7 +1256,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '114',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '準備する',
     reading: 'じゅんびする',
     meaning: 'Chuẩn bị',
@@ -1267,7 +1267,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '115',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '計画する',
     reading: 'けいかくする',
     meaning: 'Lập kế hoạch',
@@ -1278,7 +1278,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '116',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '注意する',
     reading: 'ちゅういする',
     meaning: 'Chú ý',
@@ -1289,7 +1289,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '117',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '禁煙する',
     reading: 'きんえんする',
     meaning: 'Cấm hút thuốc',
@@ -1300,7 +1300,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '118',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '案内する',
     reading: 'あんないする',
     meaning: 'Hướng dẫn',
@@ -1311,7 +1311,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '119',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '紹介する',
     reading: 'しょうかいする',
     meaning: 'Giới thiệu',
@@ -1322,7 +1322,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '120',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '連絡する',
     reading: 'れんらくする',
     meaning: 'Liên lạc',
@@ -1333,7 +1333,7 @@ export const N5_VERBS: Verb[] = [
   },
   {
     id: '121',
-    group: 'godan',
+    type: 'godan',
     dictionaryForm: '報告する',
     reading: 'ほうこくする',
     meaning: 'Báo cáo',

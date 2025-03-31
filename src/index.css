@@ -3,15 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #3B82F6;
+  --primary-color: #FF6B6B;
+  --secondary-color: #FF9999;
+  --background-color: #FFF5F5;
+  --text-color: #4A4A4A;
+  --border-color: rgba(255, 192, 203, 0.2);
   --border-radius: 8px;
 }
 
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--text-color);
+  background-color: var(--background-color);
   min-height: 100vh;
-  background: #F9FAFB;
-  color: #1F2937;
 }
 
 .demo-logo-vertical {
@@ -143,5 +157,236 @@ body {
   .ant-layout-header {
     background: #1f1f1f !important;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Sakura animations */
+@keyframes sakuraFall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(100%) rotate(45deg);
+  }
+}
+
+@keyframes floatPetal {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate(10px, -10px) rotate(5deg);
+  }
+  50% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  75% {
+    transform: translate(-10px, 10px) rotate(-5deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Japanese style elements */
+.japanese-pattern {
+  background-color: #FFF5F5;
+  background-image: 
+    linear-gradient(45deg, var(--border-color) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--border-color) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--border-color) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--border-color) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+.japanese-border {
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(255, 192, 203, 0.1);
+}
+
+.japanese-text {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* Card styles */
+.sakura-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 20px rgba(255, 192, 203, 0.1);
+  transition: all 0.3s ease;
+}
+
+.sakura-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(255, 192, 203, 0.2);
+}
+
+/* Button styles */
+.sakura-button {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sakura-button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.sakura-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+}
+
+.sakura-button:focus:not(:active)::after {
+  animation: ripple 1s ease-out;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(20, 20);
+    opacity: 0;
+  }
+}
+
+/* Input styles */
+.sakura-input {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 12px 16px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.sakura-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+  transform: translateY(-1px);
+}
+
+/* Link styles */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Only apply underline effect to navigation links */
+.ant-menu-item a::after,
+nav a::after,
+header a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+}
+
+.ant-menu-item a:hover::after,
+nav a:hover::after,
+header a:hover::after {
+  width: 100%;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  color: var(--primary-color);
+  position: relative;
+  text-decoration: none;
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  text-decoration: none !important;
+}
+
+h1 a::after, h2 a::after, h3 a::after, h4 a::after, h5 a::after, h6 a::after {
+  display: none !important;
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* Loading animation */
+.sakura-loading {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+
+.sakura-loading::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--border-color);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }
