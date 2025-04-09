@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BASIC_KANJIS } from '@/data/basicKanjis';
 
 interface Example {
