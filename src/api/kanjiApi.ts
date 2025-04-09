@@ -1,4 +1,5 @@
 import { BASIC_KANJIS } from '../data/basicKanjis';
+import { NEW_KANJIS } from '../data/newKanjis';
 import { Kanji } from '../types/kanji';
 
 export const getBasicKanjis = (): Kanji[] => {
@@ -21,12 +22,23 @@ export const getAllKanjis = async (): Promise<Kanji[]> => {
   return [...BASIC_KANJIS];
 };
 
+export const getN5Kanjis = (): Kanji[] => {
+  return [...BASIC_KANJIS, ...NEW_KANJIS].filter(kanji => kanji.jlptLevel === 'N5');
+};
+
+export const getN4Kanjis = (): Kanji[] => {
+  return [...BASIC_KANJIS, ...NEW_KANJIS].filter(kanji => kanji.jlptLevel === 'N4');
+};
 
 export const searchKanjis = async (searchText: string, level?: 'N5' | 'N4'): Promise<Kanji[]> => {
   const normalizedSearchText = searchText.toLowerCase();
-  const allKanjis = [...BASIC_KANJIS];
+  const allKanjis = [...BASIC_KANJIS, ...NEW_KANJIS];
 
   return allKanjis.filter((kanji) => {
+    if (level && kanji.jlptLevel !== level) {
+      return false;
+    }
+    
     return (
       kanji.kanji.includes(searchText) ||
       kanji.meaning.toLowerCase().includes(normalizedSearchText) ||
