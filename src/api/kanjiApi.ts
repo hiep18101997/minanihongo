@@ -1,36 +1,38 @@
-import { Kanji, N5_KANJIS } from '../data/n5kanjis';
-import { N4_KANJIS } from '../data/n4kanjis';
+import { BASIC_KANJIS } from '../data/basicKanjis';
+import { Kanji } from '../types/kanji';
+
+export const getBasicKanjis = (): Kanji[] => {
+  return BASIC_KANJIS;
+};
+
+export const getKanjiById = (id: number): Kanji | undefined => {
+  return BASIC_KANJIS.find(kanji => kanji.id === id);
+};
+
+export const getKanjisByTopic = (topic: string): Kanji[] => {
+  return BASIC_KANJIS.filter(kanji => kanji.topic === topic);
+};
+
+export const getKanjisByJlptLevel = (level: string): Kanji[] => {
+  return BASIC_KANJIS.filter(kanji => kanji.jlptLevel === level);
+};
 
 export const getAllKanjis = async (): Promise<Kanji[]> => {
-  return [...N5_KANJIS, ...N4_KANJIS];
+  return [...BASIC_KANJIS];
 };
 
-export const getN5Kanjis = async (): Promise<Kanji[]> => {
-  return N5_KANJIS;
-};
-
-export const getN4Kanjis = async (): Promise<Kanji[]> => {
-  return N4_KANJIS;
-};
 
 export const searchKanjis = async (searchText: string, level?: 'N5' | 'N4'): Promise<Kanji[]> => {
   const normalizedSearchText = searchText.toLowerCase();
-  const allKanjis = level ? 
-    (level === 'N5' ? N5_KANJIS : N4_KANJIS) : 
-    [...N5_KANJIS, ...N4_KANJIS];
+  const allKanjis = [...BASIC_KANJIS];
 
   return allKanjis.filter((kanji) => {
     return (
-      kanji.character.includes(searchText) ||
+      kanji.kanji.includes(searchText) ||
       kanji.meaning.toLowerCase().includes(normalizedSearchText) ||
-      kanji.onReading.toLowerCase().includes(normalizedSearchText) ||
-      kanji.kunReading.toLowerCase().includes(normalizedSearchText) ||
-      kanji.examples.some(
-        (example) =>
-          example.word.includes(searchText) ||
-          example.reading.toLowerCase().includes(normalizedSearchText) ||
-          example.meaning.toLowerCase().includes(normalizedSearchText)
-      )
+      kanji.onyomi.toLowerCase().includes(normalizedSearchText) ||
+      kanji.kunyomi.toLowerCase().includes(normalizedSearchText) ||
+      kanji.hanViet.toLowerCase().includes(normalizedSearchText)
     );
   });
 }; 

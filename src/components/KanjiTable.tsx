@@ -3,7 +3,7 @@ import { Table, Input, Typography, Tag, Radio } from 'antd';
 import type { ColumnsType } from 'antd/es/table';
 import { useDebounce } from '../hooks/useDebounce';
 import { getAllKanjis, searchKanjis } from '../api/kanjiApi';
-import type { Kanji } from '../data/n5kanjis';
+import type { Kanji } from '../types/kanji';
 
 const { Title } = Typography;
 
@@ -30,7 +30,7 @@ const KanjiTable: React.FC = () => {
     setLoading(true);
     try {
       const data = await getAllKanjis();
-      setKanjis(selectedLevel === 'all' ? data : data.filter(k => k.jlptLevel === selectedLevel));
+      setKanjis(data);
     } catch (error) {
       console.error('Error loading kanjis:', error);
     } finally {
@@ -53,10 +53,16 @@ const KanjiTable: React.FC = () => {
   const columns: ColumnsType<Kanji> = [
     {
       title: 'Kanji',
-      dataIndex: 'character',
-      key: 'character',
+      dataIndex: 'kanji',
+      key: 'kanji',
       className: 'font-japanese text-2xl text-center',
       width: 100,
+    },
+    {
+      title: 'Âm Hán Việt',
+      dataIndex: 'hanViet',
+      key: 'hanViet',
+      width: 120,
     },
     {
       title: 'Nghĩa',
@@ -65,12 +71,12 @@ const KanjiTable: React.FC = () => {
     },
     {
       title: 'Âm On',
-      dataIndex: 'onReading',
-      key: 'onReading',
+      dataIndex: 'onyomi',
+      key: 'onyomi',
       className: 'font-japanese',
       render: (text: string) => (
         <div className="space-x-2">
-          {text.split('、').map((reading, index) => (
+          {text?.split('、').map((reading, index) => (
             <Tag key={index} color="blue">{reading}</Tag>
           ))}
         </div>
@@ -78,40 +84,17 @@ const KanjiTable: React.FC = () => {
     },
     {
       title: 'Âm Kun',
-      dataIndex: 'kunReading',
-      key: 'kunReading',
+      dataIndex: 'kunyomi',
+      key: 'kunyomi',
       className: 'font-japanese',
       render: (text: string) => (
         <div className="space-x-2">
-          {text.split('、').map((reading, index) => (
+          {text?.split('、').map((reading, index) => (
             <Tag key={index} color="green">{reading}</Tag>
           ))}
         </div>
       ),
-    },
-    {
-      title: 'Số nét',
-      dataIndex: 'strokeCount',
-      key: 'strokeCount',
-      width: 100,
-      align: 'center',
-      sorter: (a, b) => a.strokeCount - b.strokeCount,
-    },
-    {
-      title: 'JLPT',
-      dataIndex: 'jlptLevel',
-      key: 'jlptLevel',
-      width: 100,
-      align: 'center',
-      render: (level: string) => (
-        <Tag color={level === 'N5' ? 'purple' : 'orange'}>{level}</Tag>
-      ),
-      filters: [
-        { text: 'N5', value: 'N5' },
-        { text: 'N4', value: 'N4' },
-      ],
-      onFilter: (value, record) => record.jlptLevel === value,
-    },
+    }
   ];
 
   const expandedRowRender = (record: Kanji) => {
