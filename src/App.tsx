@@ -6,9 +6,10 @@ import Settings from './components/Settings'
 import Guide from './components/Guide'
 import SakuraBackground from './components/SakuraBackground'
 import { AppBar, Toolbar, Typography, Button, Box, Container, IconButton, Drawer, List, ListItemButton, ListItemIcon, ListItemText, useTheme, useMediaQuery } from '@mui/material'
-import { Menu as MenuIcon, Translate, Brush, Settings as SettingsIcon, Help, Mic } from '@mui/icons-material'
+import { Menu as MenuIcon, Translate, Brush, Settings as SettingsIcon, Help, Mic, School } from '@mui/icons-material'
 import sakuraLogo from '/sakura-logo.svg'
 import AudioUploader from './components/AudioUploader'
+import N5Review from './components/N5Review'
 
 const BASE_PATH = ''
 
@@ -21,6 +22,7 @@ const App: React.FC = () => {
   const menuItems = [
     { text: 'Bảng động từ', icon: <Translate />, path: '/verbs' },
     { text: 'Học Kanji', icon: <Brush />, path: '/kanji' },
+    { text: 'Ôn tập N5', icon: <School />, path: '/n5review' },
     { text: 'Nhận dạng giọng nói', icon: <Mic />, path: '/audio' },
     { text: 'Cài đặt', icon: <SettingsIcon />, path: '/settings' },
     { text: 'Hướng dẫn', icon: <Help />, path: '/guide' },
@@ -251,6 +253,7 @@ const App: React.FC = () => {
           <Route path="/audio" element={<AudioUploader />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/guide" element={<Guide />} />
+          <Route path="/n5review" element={<N5Review />} />
           <Route path="/" element={<Navigate to="/verbs" replace />} />
         </Routes>
       </Container>

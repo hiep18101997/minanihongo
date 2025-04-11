@@ -1620,5 +1620,905 @@ export const NEW_KANJIS: Kanji[] = [
       { word: '通学', reading: 'つうがく', meaning: 'đi học (On-yomi)' },
       { word: '交通', reading: 'こうつう', meaning: 'giao thông (On-yomi)' }
     ]
+  },
+  {
+    id: 321,
+    kanji: '家',
+    onyomi: 'カ、ケ',
+    kunyomi: 'いえ、や',
+    meaning: 'nhà, gia đình',
+    hanViet: 'Gia',
+    topic: 'Nhà cửa',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '家', reading: 'いえ', meaning: 'nhà (Kun-yomi)' },
+      { word: '家族', reading: 'かぞく', meaning: 'gia đình (On-yomi)' },
+      { word: '家庭', reading: 'かてい', meaning: 'gia đình (On-yomi)' }
+    ]
+  },
+  {
+    id: 322,
+    kanji: '族',
+    onyomi: 'ゾク',
+    kunyomi: '',
+    meaning: 'tộc, dòng họ',
+    hanViet: 'Tộc',
+    topic: 'Gia đình',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '家族', reading: 'かぞく', meaning: 'gia đình (On-yomi)' },
+      { word: '民族', reading: 'みんぞく', meaning: 'dân tộc (On-yomi)' },
+      { word: '親族', reading: 'しんぞく', meaning: 'họ hàng (On-yomi)' }
+    ]
+  },
+  {
+    id: 323,
+    kanji: '兄',
+    onyomi: 'ケイ、キョウ',
+    kunyomi: 'あに',
+    meaning: 'huynh, anh trai',
+    hanViet: 'Huynh',
+    topic: 'Gia đình',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '兄', reading: 'あに', meaning: 'anh trai (Kun-yomi)' },
+      { word: '兄弟', reading: 'きょうだい', meaning: 'anh em (On-yomi)' },
+      { word: '義兄', reading: 'ぎけい', meaning: 'anh rể (On-yomi)' }
+    ]
+  },
+  {
+    id: 324,
+    kanji: '姉',
+    onyomi: 'シ',
+    kunyomi: 'あね',
+    meaning: 'tỷ, chị gái',
+    hanViet: 'Tỷ',
+    topic: 'Gia đình',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '姉', reading: 'あね', meaning: 'chị gái (Kun-yomi)' },
+      { word: '姉妹', reading: 'しまい', meaning: 'chị em (On-yomi)' },
+      { word: '義姉', reading: 'ぎし', meaning: 'chị dâu (On-yomi)' }
+    ]
+  },
+  {
+    id: 325,
+    kanji: '私',
+    onyomi: 'シ',
+    kunyomi: 'わたし、わたくし',
+    meaning: 'tư, tôi',
+    hanViet: 'Tư',
+    topic: 'Đại từ',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '私', reading: 'わたし', meaning: 'tôi (Kun-yomi)' },
+      { word: '私立', reading: 'しりつ', meaning: 'tư lập (On-yomi)' },
+      { word: '私生活', reading: 'しせいかつ', meaning: 'đời sống riêng tư (On-yomi)' }
+    ]
+  },
+  {
+    id: 326,
+    kanji: '育',
+    onyomi: 'イク',
+    kunyomi: 'そだつ、そだてる',
+    meaning: 'dục, nuôi dưỡng',
+    hanViet: 'Dục',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '育てる', reading: 'そだてる', meaning: 'nuôi dưỡng (Kun-yomi)' },
+      { word: '教育', reading: 'きょういく', meaning: 'giáo dục (On-yomi)' },
+      { word: '育つ', reading: 'そだつ', meaning: 'phát triển (Kun-yomi)' }
+    ]
+  },
+  {
+    id: 327,
+    kanji: '部',
+    onyomi: 'ブ',
+    kunyomi: '',
+    meaning: 'bộ, phần',
+    hanViet: 'Bộ',
+    topic: 'Tổ chức',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '部分', reading: 'ぶぶん', meaning: 'phần (On-yomi)' },
+      { word: '部屋', reading: 'へや', meaning: 'phòng (On-yomi)' },
+      { word: '部品', reading: 'ぶひん', meaning: 'phụ tùng (On-yomi)' }
+    ]
+  },
+  {
+    id: 328,
+    kanji: '屋',
+    onyomi: 'オク',
+    kunyomi: 'や',
+    meaning: 'ốc, nhà',
+    hanViet: 'Ốc',
+    topic: 'Nhà cửa',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '屋上', reading: 'おくじょう', meaning: 'sân thượng (On-yomi)' },
+      { word: '本屋', reading: 'ほんや', meaning: 'hiệu sách (Kun-yomi)' },
+      { word: '屋根', reading: 'やね', meaning: 'mái nhà (Kun-yomi)' }
+    ]
+  },
+  {
+    id: 329,
+    kanji: '広',
+    onyomi: 'コウ',
+    kunyomi: 'ひろい、ひろめる',
+    meaning: 'quảng, rộng',
+    hanViet: 'Quảng',
+    topic: 'Tính chất',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '広い', reading: 'ひろい', meaning: 'rộng (Kun-yomi)' },
+      { word: '広告', reading: 'こうこく', meaning: 'quảng cáo (On-yomi)' },
+      { word: '広場', reading: 'ひろば', meaning: 'quảng trường (Kun-yomi)' }
+    ]
+  },
+  {
+    id: 330,
+    kanji: '低',
+    onyomi: 'テイ',
+    kunyomi: 'ひくい、ひくめる',
+    meaning: 'đê, thấp',
+    hanViet: 'Đê',
+    topic: 'Tính chất',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '低い', reading: 'ひくい', meaning: 'thấp (Kun-yomi)' },
+      { word: '低温', reading: 'ていおん', meaning: 'nhiệt độ thấp (On-yomi)' },
+      { word: '低下', reading: 'ていか', meaning: 'giảm xuống (On-yomi)' }
+    ]
+  },
+  {
+    id: 331,
+    kanji: '近',
+    onyomi: 'キン',
+    kunyomi: 'ちかい',
+    meaning: 'cận, gần',
+    hanViet: 'Cận',
+    topic: 'Vị trí',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '近い', reading: 'ちかい', meaning: 'gần (Kun-yomi)' },
+      { word: '近所', reading: 'きんじょ', meaning: 'vùng lân cận (On-yomi)' },
+      { word: '最近', reading: 'さいきん', meaning: 'gần đây (On-yomi)' }
+    ]
+  },
+  {
+    id: 332,
+    kanji: '遠',
+    onyomi: 'エン、オン',
+    kunyomi: 'とおい',
+    meaning: 'viễn, xa',
+    hanViet: 'Viễn',
+    topic: 'Vị trí',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '遠い', reading: 'とおい', meaning: 'xa (Kun-yomi)' },
+      { word: '遠足', reading: 'えんそく', meaning: 'dã ngoại (On-yomi)' },
+      { word: '遠方', reading: 'えんぽう', meaning: 'vùng xa (On-yomi)' }
+    ]
+  },
+  {
+    id: 333,
+    kanji: '仕',
+    onyomi: 'シ、ジ',
+    kunyomi: 'つかえる',
+    meaning: 'sĩ, phục vụ',
+    hanViet: 'Sĩ',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '仕える', reading: 'つかえる', meaning: 'phục vụ (Kun-yomi)' },
+      { word: '仕事', reading: 'しごと', meaning: 'công việc (On-yomi)' },
+      { word: '仕方', reading: 'しかた', meaning: 'cách làm (On-yomi)' }
+    ]
+  },
+  {
+    id: 334,
+    kanji: '事',
+    onyomi: 'ジ、ズ',
+    kunyomi: 'こと',
+    meaning: 'sự, việc',
+    hanViet: 'Sự',
+    topic: 'Từ chung',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '事', reading: 'こと', meaning: 'việc (Kun-yomi)' },
+      { word: '事件', reading: 'じけん', meaning: 'sự kiện (On-yomi)' },
+      { word: '事情', reading: 'じじょう', meaning: 'tình hình (On-yomi)' }
+    ]
+  },
+  {
+    id: 335,
+    kanji: '業',
+    onyomi: 'ギョウ、ゴウ',
+    kunyomi: 'わざ',
+    meaning: 'nghiệp, nghề',
+    hanViet: 'Nghiệp',
+    topic: 'Công việc',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '業', reading: 'ぎょう', meaning: 'nghề (On-yomi)' },
+      { word: '工業', reading: 'こうぎょう', meaning: 'công nghiệp (On-yomi)' },
+      { word: '農業', reading: 'のうぎょう', meaning: 'nông nghiệp (On-yomi)' }
+    ]
+  },
+  {
+    id: 336,
+    kanji: '始',
+    onyomi: 'シ',
+    kunyomi: 'はじめる、はじまる',
+    meaning: 'thủy, bắt đầu',
+    hanViet: 'Thủy',
+    topic: 'Thời gian',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '始める', reading: 'はじめる', meaning: 'bắt đầu (Kun-yomi)' },
+      { word: '開始', reading: 'かいし', meaning: 'bắt đầu (On-yomi)' },
+      { word: '始発', reading: 'しはつ', meaning: 'khởi hành (On-yomi)' }
+    ]
+  },
+  {
+    id: 337,
+    kanji: '終',
+    onyomi: 'シュウ',
+    kunyomi: 'おわる、おえる',
+    meaning: 'chung, kết thúc',
+    hanViet: 'Chung',
+    topic: 'Thời gian',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '終わる', reading: 'おわる', meaning: 'kết thúc (Kun-yomi)' },
+      { word: '終える', reading: 'おえる', meaning: 'hoàn thành (Kun-yomi)' },
+      { word: '終了', reading: 'しゅうりょう', meaning: 'kết thúc (On-yomi)' }
+    ]
+  },
+  {
+    id: 338,
+    kanji: '働',
+    onyomi: 'ドウ',
+    kunyomi: 'はたらく',
+    meaning: 'động, làm việc',
+    hanViet: 'Động',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '働く', reading: 'はたらく', meaning: 'làm việc (Kun-yomi)' },
+      { word: '労働', reading: 'ろうどう', meaning: 'lao động (On-yomi)' },
+      { word: '仕事', reading: 'しごと', meaning: 'công việc (On-yomi)' }
+    ]
+  },
+  {
+    id: 339,
+    kanji: '場',
+    onyomi: 'ジョウ、チョウ',
+    kunyomi: 'ば',
+    meaning: 'trường, nơi',
+    hanViet: 'Trường',
+    topic: 'Vị trí',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '場所', reading: 'ばしょ', meaning: 'địa điểm (Kun-yomi)' },
+      { word: '会場', reading: 'かいじょう', meaning: 'hội trường (On-yomi)' },
+      { word: '市場', reading: 'いちば', meaning: 'chợ (Kun-yomi)' }
+    ]
+  },
+  {
+    id: 340,
+    kanji: '品',
+    onyomi: 'ヒン',
+    kunyomi: 'しな',
+    meaning: 'phẩm, hàng hóa',
+    hanViet: 'Phẩm',
+    topic: 'Thương mại',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '品物', reading: 'しなもの', meaning: 'hàng hóa (Kun-yomi)' },
+      { word: '商品', reading: 'しょうひん', meaning: 'hàng hóa (On-yomi)' },
+      { word: '品質', reading: 'ひんしつ', meaning: 'phẩm chất (On-yomi)' }
+    ]
+  },
+  {
+    id: 341,
+    kanji: '客',
+    onyomi: 'キャク、カク',
+    kunyomi: '',
+    meaning: 'khách',
+    hanViet: 'Khách',
+    topic: 'Thương mại',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '客', reading: 'きゃく', meaning: 'khách (On-yomi)' },
+      { word: '客室', reading: 'きゃくしつ', meaning: 'phòng khách (On-yomi)' },
+      { word: '観客', reading: 'かんきゃく', meaning: 'khán giả (On-yomi)' }
+    ]
+  },
+  {
+    id: 342,
+    kanji: '親',
+    onyomi: 'シン',
+    kunyomi: 'おや、したしい',
+    meaning: 'thân, gần gũi',
+    hanViet: 'Thân',
+    topic: 'Gia đình',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '親', reading: 'おや', meaning: 'cha mẹ (Kun-yomi)' },
+      { word: '親切', reading: 'しんせつ', meaning: 'tốt bụng (On-yomi)' },
+      { word: '親友', reading: 'しんゆう', meaning: 'bạn thân (On-yomi)' }
+    ]
+  },
+  {
+    id: 343,
+    kanji: '切',
+    onyomi: 'セツ、サイ',
+    kunyomi: 'きる、きれる',
+    meaning: 'thiết, cắt',
+    hanViet: 'Thiết',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '切る', reading: 'きる', meaning: 'cắt (Kun-yomi)' },
+      { word: '大切', reading: 'たいせつ', meaning: 'quan trọng (On-yomi)' },
+      { word: '切手', reading: 'きって', meaning: 'tem (Kun-yomi)' }
+    ]
+  },
+  {
+    id: 344,
+    kanji: '売',
+    onyomi: 'バイ',
+    kunyomi: 'うる、うれる',
+    meaning: 'mại, bán',
+    hanViet: 'Mại',
+    topic: 'Thương mại',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '売る', reading: 'うる', meaning: 'bán (Kun-yomi)' },
+      { word: '売店', reading: 'ばいてん', meaning: 'cửa hàng (On-yomi)' },
+      { word: '販売', reading: 'はんばい', meaning: 'bán hàng (On-yomi)' }
+    ]
+  },
+  {
+    id: 345,
+    kanji: '店',
+    onyomi: 'テン',
+    kunyomi: 'みせ',
+    meaning: 'điếm, cửa hàng',
+    hanViet: 'Điếm',
+    topic: 'Thương mại',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '店', reading: 'みせ', meaning: 'cửa hàng (Kun-yomi)' },
+      { word: '店員', reading: 'てんいん', meaning: 'nhân viên cửa hàng (On-yomi)' },
+      { word: '商店', reading: 'しょうてん', meaning: 'cửa hàng (On-yomi)' }
+    ]
+  },
+  {
+    id: 346,
+    kanji: '員',
+    onyomi: 'イン',
+    kunyomi: '',
+    meaning: 'viên, thành viên',
+    hanViet: 'Viên',
+    topic: 'Tổ chức',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '店員', reading: 'てんいん', meaning: 'nhân viên cửa hàng (On-yomi)' },
+      { word: '社員', reading: 'しゃいん', meaning: 'nhân viên công ty (On-yomi)' },
+      { word: '会員', reading: 'かいいん', meaning: 'thành viên (On-yomi)' }
+    ]
+  },
+  {
+    id: 347,
+    kanji: '便',
+    onyomi: 'ベン、ビン',
+    kunyomi: 'たより',
+    meaning: 'tiện, thuận tiện',
+    hanViet: 'Tiện',
+    topic: 'Tính chất',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '便', reading: 'たより', meaning: 'tin tức (Kun-yomi)' },
+      { word: '便利', reading: 'べんり', meaning: 'tiện lợi (On-yomi)' },
+      { word: '郵便', reading: 'ゆうびん', meaning: 'bưu điện (On-yomi)' }
+    ]
+  },
+  {
+    id: 348,
+    kanji: '利',
+    onyomi: 'リ',
+    kunyomi: 'きく',
+    meaning: 'lợi, có lợi',
+    hanViet: 'Lợi',
+    topic: 'Tính chất',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '利く', reading: 'きく', meaning: 'có hiệu quả (Kun-yomi)' },
+      { word: '利益', reading: 'りえき', meaning: 'lợi ích (On-yomi)' },
+      { word: '利用', reading: 'りよう', meaning: 'sử dụng (On-yomi)' }
+    ]
+  },
+  {
+    id: 349,
+    kanji: '使',
+    onyomi: 'シ',
+    kunyomi: 'つかう',
+    meaning: 'sử, sử dụng',
+    hanViet: 'Sử',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '使う', reading: 'つかう', meaning: 'sử dụng (Kun-yomi)' },
+      { word: '使用', reading: 'しよう', meaning: 'sử dụng (On-yomi)' },
+      { word: '大使', reading: 'たいし', meaning: 'đại sứ (On-yomi)' }
+    ]
+  },
+  {
+    id: 350,
+    kanji: '銀',
+    onyomi: 'ギン',
+    kunyomi: '',
+    meaning: 'ngân, bạc',
+    hanViet: 'Ngân',
+    topic: 'Kim loại',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '銀', reading: 'ぎん', meaning: 'bạc (On-yomi)' },
+      { word: '銀行', reading: 'ぎんこう', meaning: 'ngân hàng (On-yomi)' },
+      { word: '銀河', reading: 'ぎんが', meaning: 'ngân hà (On-yomi)' }
+    ]
+  },
+  {
+    id: 351,
+    kanji: '白',
+    onyomi: 'ハク、ビャク',
+    kunyomi: 'しろ、しら',
+    meaning: 'bạch, trắng',
+    hanViet: 'Bạch',
+    topic: 'Màu sắc',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '白い', reading: 'しろい', meaning: 'trắng (Kun-yomi)' },
+      { word: '白紙', reading: 'はくし', meaning: 'giấy trắng (On-yomi)' },
+      { word: '明白', reading: 'めいはく', meaning: 'rõ ràng (On-yomi)' }
+    ]
+  },
+  {
+    id: 352,
+    kanji: '紙',
+    onyomi: 'シ',
+    kunyomi: 'かみ',
+    meaning: 'chỉ, giấy',
+    hanViet: 'Chỉ',
+    topic: 'Vật liệu',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '紙', reading: 'かみ', meaning: 'giấy (Kun-yomi)' },
+      { word: '新聞紙', reading: 'しんぶんし', meaning: 'báo (On-yomi)' },
+      { word: '和紙', reading: 'わし', meaning: 'giấy Nhật (On-yomi)' }
+    ]
+  },
+  {
+    id: 353,
+    kanji: '時',
+    onyomi: 'ジ',
+    kunyomi: 'とき',
+    meaning: 'thời, thời gian',
+    hanViet: 'Thời',
+    topic: 'Thời gian',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '時', reading: 'とき', meaning: 'thời gian (Kun-yomi)' },
+      { word: '時間', reading: 'じかん', meaning: 'thời gian (On-yomi)' },
+      { word: '時代', reading: 'じだい', meaning: 'thời đại (On-yomi)' }
+    ]
+  },
+  {
+    id: 354,
+    kanji: '間',
+    onyomi: 'カン、ケン',
+    kunyomi: 'あいだ、ま',
+    meaning: 'gian, khoảng',
+    hanViet: 'Gian',
+    topic: 'Thời gian',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '間', reading: 'あいだ', meaning: 'giữa (Kun-yomi)' },
+      { word: '時間', reading: 'じかん', meaning: 'thời gian (On-yomi)' },
+      { word: '人間', reading: 'にんげん', meaning: 'con người (On-yomi)' }
+    ]
+  },
+  {
+    id: 355,
+    kanji: '朝',
+    onyomi: 'チョウ',
+    kunyomi: 'あさ',
+    meaning: 'triều, buổi sáng',
+    hanViet: 'Triều',
+    topic: 'Thời gian',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '朝', reading: 'あさ', meaning: 'buổi sáng (Kun-yomi)' },
+      { word: '朝食', reading: 'ちょうしょく', meaning: 'bữa sáng (On-yomi)' },
+      { word: '朝日', reading: 'あさひ', meaning: 'ánh nắng sáng (Kun-yomi)' }
+    ]
+  },
+  {
+    id: 356,
+    kanji: '晩',
+    onyomi: 'バン',
+    kunyomi: '',
+    meaning: 'vãn, buổi tối',
+    hanViet: 'Vãn',
+    topic: 'Thời gian',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '晩', reading: 'ばん', meaning: 'buổi tối (On-yomi)' },
+      { word: '晩御飯', reading: 'ばんごはん', meaning: 'bữa tối (On-yomi)' },
+      { word: '今晩', reading: 'こんばん', meaning: 'tối nay (On-yomi)' }
+    ]
+  },
+  {
+    id: 357,
+    kanji: '昼',
+    onyomi: 'チュウ',
+    kunyomi: 'ひる',
+    meaning: 'trú, buổi trưa',
+    hanViet: 'Trú',
+    topic: 'Thời gian',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '昼', reading: 'ひる', meaning: 'buổi trưa (Kun-yomi)' },
+      { word: '昼食', reading: 'ちゅうしょく', meaning: 'bữa trưa (On-yomi)' },
+      { word: '昼休み', reading: 'ひるやすみ', meaning: 'giờ nghỉ trưa (Kun-yomi)' }
+    ]
+  },
+  {
+    id: 358,
+    kanji: '夜',
+    onyomi: 'ヤ',
+    kunyomi: 'よる、よ',
+    meaning: 'dạ, đêm',
+    hanViet: 'Dạ',
+    topic: 'Thời gian',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '夜', reading: 'よる', meaning: 'đêm (Kun-yomi)' },
+      { word: '夜中', reading: 'よなか', meaning: 'nửa đêm (Kun-yomi)' },
+      { word: '今夜', reading: 'こんや', meaning: 'đêm nay (On-yomi)' }
+    ]
+  },
+  {
+    id: 359,
+    kanji: '早',
+    onyomi: 'ソウ、サッ',
+    kunyomi: 'はやい、はやめる',
+    meaning: 'tảo, sớm',
+    hanViet: 'Tảo',
+    topic: 'Thời gian',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '早い', reading: 'はやい', meaning: 'sớm (Kun-yomi)' },
+      { word: '早朝', reading: 'そうちょう', meaning: 'sáng sớm (On-yomi)' },
+      { word: '早速', reading: 'さっそく', meaning: 'ngay lập tức (On-yomi)' }
+    ]
+  },
+  {
+    id: 360,
+    kanji: '荷',
+    onyomi: 'カ',
+    kunyomi: 'に',
+    meaning: 'hà, hành lý',
+    hanViet: 'Hà',
+    topic: 'Vận chuyển',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '荷物', reading: 'にもつ', meaning: 'hành lý (Kun-yomi)' },
+      { word: '出荷', reading: 'しゅっか', meaning: 'xuất hàng (On-yomi)' },
+      { word: '入荷', reading: 'にゅうか', meaning: 'nhập hàng (On-yomi)' }
+    ]
+  },
+  {
+    id: 361,
+    kanji: '送',
+    onyomi: 'ソウ',
+    kunyomi: 'おくる',
+    meaning: 'tống, gửi',
+    hanViet: 'Tống',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '送る', reading: 'おくる', meaning: 'gửi (Kun-yomi)' },
+      { word: '送信', reading: 'そうしん', meaning: 'gửi tin nhắn (On-yomi)' },
+      { word: '送料', reading: 'そうりょう', meaning: 'phí vận chuyển (On-yomi)' }
+    ]
+  },
+  {
+    id: 362,
+    kanji: '届',
+    onyomi: 'カイ',
+    kunyomi: 'とどく、とどける',
+    meaning: 'giới, đến',
+    hanViet: 'Giới',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '届く', reading: 'とどく', meaning: 'đến (Kun-yomi)' },
+      { word: '届ける', reading: 'とどける', meaning: 'giao (Kun-yomi)' },
+      { word: '届出', reading: 'とどけで', meaning: 'đăng ký (Kun-yomi)' }
+    ]
+  },
+  {
+    id: 363,
+    kanji: '返',
+    onyomi: 'ヘン',
+    kunyomi: 'かえす、かえる',
+    meaning: 'phản, trả lại',
+    hanViet: 'Phản',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '返す', reading: 'かえす', meaning: 'trả lại (Kun-yomi)' },
+      { word: '返事', reading: 'へんじ', meaning: 'trả lời (On-yomi)' },
+      { word: '返信', reading: 'へんしん', meaning: 'trả lời tin nhắn (On-yomi)' }
+    ]
+  },
+  {
+    id: 364,
+    kanji: '渡',
+    onyomi: 'ト',
+    kunyomi: 'わたる、わたす',
+    meaning: 'độ, qua',
+    hanViet: 'Độ',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '渡る', reading: 'わたる', meaning: 'qua (Kun-yomi)' },
+      { word: '渡す', reading: 'わたす', meaning: 'trao (Kun-yomi)' },
+      { word: '引渡', reading: 'ひきわたし', meaning: 'giao nộp (Kun-yomi)' }
+    ]
+  },
+  {
+    id: 365,
+    kanji: '着',
+    onyomi: 'チャク',
+    kunyomi: 'きる、つく',
+    meaning: 'trước, mặc',
+    hanViet: 'Trước',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '着る', reading: 'きる', meaning: 'mặc (Kun-yomi)' },
+      { word: '到着', reading: 'とうちゃく', meaning: 'đến nơi (On-yomi)' },
+      { word: '着物', reading: 'きもの', meaning: 'kimono (Kun-yomi)' }
+    ]
+  },
+  {
+    id: 366,
+    kanji: '脱',
+    onyomi: 'ダツ',
+    kunyomi: 'ぬぐ、ぬげる',
+    meaning: 'thoát, cởi',
+    hanViet: 'Thoát',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '脱ぐ', reading: 'ぬぐ', meaning: 'cởi (Kun-yomi)' },
+      { word: '脱出', reading: 'だっしゅつ', meaning: 'thoát ra (On-yomi)' },
+      { word: '脱退', reading: 'だったい', meaning: 'rút lui (On-yomi)' }
+    ]
+  },
+  {
+    id: 367,
+    kanji: '洗',
+    onyomi: 'セン',
+    kunyomi: 'あらう',
+    meaning: 'tẩy, rửa',
+    hanViet: 'Tẩy',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '洗う', reading: 'あらう', meaning: 'rửa (Kun-yomi)' },
+      { word: '洗濯', reading: 'せんたく', meaning: 'giặt giũ (On-yomi)' },
+      { word: '洗面', reading: 'せんめん', meaning: 'rửa mặt (On-yomi)' }
+    ]
+  },
+  {
+    id: 368,
+    kanji: '掃',
+    onyomi: 'ソウ',
+    kunyomi: 'はく、そうじ',
+    meaning: 'tảo, quét',
+    hanViet: 'Tảo',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '掃除', reading: 'そうじ', meaning: 'dọn dẹp (On-yomi)' },
+      { word: '掃く', reading: 'はく', meaning: 'quét (Kun-yomi)' },
+      { word: '掃除機', reading: 'そうじき', meaning: 'máy hút bụi (On-yomi)' }
+    ]
+  },
+  {
+    id: 369,
+    kanji: '切',
+    onyomi: 'セツ、サイ',
+    kunyomi: 'きる、きれる',
+    meaning: 'thiết, cắt',
+    hanViet: 'Thiết',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '切る', reading: 'きる', meaning: 'cắt (Kun-yomi)' },
+      { word: '大切', reading: 'たいせつ', meaning: 'quan trọng (On-yomi)' },
+      { word: '切手', reading: 'きって', meaning: 'tem (Kun-yomi)' }
+    ]
+  },
+  {
+    id: 370,
+    kanji: '折',
+    onyomi: 'セツ',
+    kunyomi: 'おる、おりる',
+    meaning: 'chiết, gập',
+    hanViet: 'Chiết',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '折る', reading: 'おる', meaning: 'gập (Kun-yomi)' },
+      { word: '折り返し', reading: 'おりかえし', meaning: 'quay lại (Kun-yomi)' },
+      { word: '骨折', reading: 'こっせつ', meaning: 'gãy xương (On-yomi)' }
+    ]
+  },
+  {
+    id: 371,
+    kanji: '開',
+    onyomi: 'カイ',
+    kunyomi: 'あく、あける、ひらく',
+    meaning: 'khai, mở',
+    hanViet: 'Khai',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '開く', reading: 'あく', meaning: 'mở (Kun-yomi)' },
+      { word: '開始', reading: 'かいし', meaning: 'bắt đầu (On-yomi)' },
+      { word: '開店', reading: 'かいてん', meaning: 'mở cửa hàng (On-yomi)' }
+    ]
+  },
+  {
+    id: 372,
+    kanji: '閉',
+    onyomi: 'ヘイ',
+    kunyomi: 'しめる、とじる',
+    meaning: 'bế, đóng',
+    hanViet: 'Bế',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '閉める', reading: 'しめる', meaning: 'đóng (Kun-yomi)' },
+      { word: '閉店', reading: 'へいてん', meaning: 'đóng cửa (On-yomi)' },
+      { word: '閉会', reading: 'へいかい', meaning: 'bế mạc (On-yomi)' }
+    ]
+  },
+  {
+    id: 373,
+    kanji: '始',
+    onyomi: 'シ',
+    kunyomi: 'はじめる、はじまる',
+    meaning: 'thủy, bắt đầu',
+    hanViet: 'Thủy',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '始める', reading: 'はじめる', meaning: 'bắt đầu (Kun-yomi)' },
+      { word: '開始', reading: 'かいし', meaning: 'bắt đầu (On-yomi)' },
+      { word: '始発', reading: 'しはつ', meaning: 'khởi hành (On-yomi)' }
+    ]
+  },
+  {
+    id: 374,
+    kanji: '終',
+    onyomi: 'シュウ',
+    kunyomi: 'おわる、おえる',
+    meaning: 'chung, kết thúc',
+    hanViet: 'Chung',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '終わる', reading: 'おわる', meaning: 'kết thúc (Kun-yomi)' },
+      { word: '終了', reading: 'しゅうりょう', meaning: 'kết thúc (On-yomi)' },
+      { word: '最終', reading: 'さいしゅう', meaning: 'cuối cùng (On-yomi)' }
+    ]
+  },
+  {
+    id: 375,
+    kanji: '続',
+    onyomi: 'ゾク',
+    kunyomi: 'つづく、つづける',
+    meaning: 'tục, tiếp tục',
+    hanViet: 'Tục',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '続く', reading: 'つづく', meaning: 'tiếp tục (Kun-yomi)' },
+      { word: '続ける', reading: 'つづける', meaning: 'tiếp tục (Kun-yomi)' },
+      { word: '連続', reading: 'れんぞく', meaning: 'liên tục (On-yomi)' }
+    ]
+  },
+  {
+    id: 376,
+    kanji: '止',
+    onyomi: 'シ',
+    kunyomi: 'とまる、とめる',
+    meaning: 'chỉ, dừng',
+    hanViet: 'Chỉ',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '止まる', reading: 'とまる', meaning: 'dừng lại (Kun-yomi)' },
+      { word: '停止', reading: 'ていし', meaning: 'dừng lại (On-yomi)' },
+      { word: '禁止', reading: 'きんし', meaning: 'cấm (On-yomi)' }
+    ]
+  },
+  {
+    id: 377,
+    kanji: '待',
+    onyomi: 'タイ',
+    kunyomi: 'まつ',
+    meaning: 'đãi, đợi',
+    hanViet: 'Đãi',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '待つ', reading: 'まつ', meaning: 'đợi (Kun-yomi)' },
+      { word: '待合', reading: 'まちあい', meaning: 'phòng đợi (Kun-yomi)' },
+      { word: '期待', reading: 'きたい', meaning: 'mong đợi (On-yomi)' }
+    ]
+  },
+  {
+    id: 378,
+    kanji: '見',
+    onyomi: 'ケン',
+    kunyomi: 'みる、みえる',
+    meaning: 'kiến, nhìn',
+    hanViet: 'Kiến',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '見る', reading: 'みる', meaning: 'nhìn (Kun-yomi)' },
+      { word: '見学', reading: 'けんがく', meaning: 'tham quan (On-yomi)' },
+      { word: '見物', reading: 'けんぶつ', meaning: 'ngắm cảnh (On-yomi)' }
+    ]
+  },
+  {
+    id: 379,
+    kanji: '聞',
+    onyomi: 'ブン、モン',
+    kunyomi: 'きく、きこえる',
+    meaning: 'văn, nghe',
+    hanViet: 'Văn',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '聞く', reading: 'きく', meaning: 'nghe (Kun-yomi)' },
+      { word: '新聞', reading: 'しんぶん', meaning: 'báo (On-yomi)' },
+      { word: '聞き取り', reading: 'ききとり', meaning: 'nghe hiểu (Kun-yomi)' }
+    ]
+  },
+  {
+    id: 380,
+    kanji: '話',
+    onyomi: 'ワ',
+    kunyomi: 'はなす、はなし',
+    meaning: 'thoại, nói chuyện',
+    hanViet: 'Thoại',
+    topic: 'Hành động',
+    jlptLevel: 'N5',
+    examples: [
+      { word: '話す', reading: 'はなす', meaning: 'nói chuyện (Kun-yomi)' },
+      { word: '会話', reading: 'かいわ', meaning: 'hội thoại (On-yomi)' },
+      { word: '電話', reading: 'でんわ', meaning: 'điện thoại (On-yomi)' }
+    ]
   }
 ]; 
